@@ -20,4 +20,18 @@ def censor_one(input_text,censor):
         censored_item = censored_item + "X"
     return input_text.replace(censor,censored_item)
 
-print(censor_one(email_one, email_one_censor_word))
+#print(censor_one(email_one, email_one_censor_word))
+
+def censor_two(input_text,censor_list):
+    for word in censor_list:
+        censored_word = ""
+        for x in range(0,len(word)):
+          if word[x] == " ":
+            censored_word = censored_word + " "
+          else:
+            censored_word = censored_word + "X"
+        input_text = input_text.replace(word,censored_word)
+    return input_text
+
+print(censor_two(email_two, proprietary_terms))
+
