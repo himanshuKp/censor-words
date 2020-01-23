@@ -9,10 +9,15 @@ censoring_word = "learning algorithms"
 proprietary_terms = ["she", "personality matrix", "sense of self", 
 "self-preservation", "learning algorithms", "her", "herself"]
 
-def censor_words(email,proprietary_terms):
-    for text in proprietary_terms:
-        if text in email:
-            email = email.replace(text,"*"*len(text))
-    return email
+email_one_censor_word = "learning algorithms"
 
-print(censor_words(email_two,proprietary_terms))
+def censor_one(input_text,censor):
+    censored_item = ""
+    for x in range(0,len(censor)):
+      if censor[x] == " ":
+        censored_item = censored_item + " "
+      else:
+        censored_item = censored_item + "X"
+    return input_text.replace(censor,censored_item)
+
+print(censor_one(email_one, email_one_censor_word))
