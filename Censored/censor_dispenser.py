@@ -7,11 +7,12 @@ email_four = open("email_four.txt", "r").read()
 censoring_word = "learning algorithms"
 
 proprietary_terms = ["she", "personality matrix", "sense of self", 
-"self-preservation", "learning algorithm", "her", "herself"]
+"self-preservation", "learning algorithms", "her", "herself"]
 
-def censor_words(email,censoring_word):
-    if censoring_word in email:
-        email = email.replace(censoring_word,"*"*len(censoring_word))
+def censor_words(email,proprietary_terms):
+    for text in proprietary_terms:
+        if text in email:
+            email = email.replace(text,"*"*len(text))
     return email
 
-print(censor_words(email_one,censoring_word))
+print(censor_words(email_two,proprietary_terms))
