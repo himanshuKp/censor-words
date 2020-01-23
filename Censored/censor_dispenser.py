@@ -4,4 +4,14 @@ email_two = open("email_two.txt", "r").read()
 email_three = open("email_three.txt", "r").read()
 email_four = open("email_four.txt", "r").read()
 
-print(email_one)
+censoring_word = "learning algorithms"
+
+proprietary_terms = ["she", "personality matrix", "sense of self", 
+"self-preservation", "learning algorithm", "her", "herself"]
+
+def censor_words(email,censoring_word):
+    if censoring_word in email:
+        email = email.replace(censoring_word,"*"*len(censoring_word))
+    return email
+
+print(censor_words(email_one,censoring_word))
